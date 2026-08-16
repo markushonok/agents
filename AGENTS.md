@@ -14,7 +14,7 @@ Project-specific instructions take precedence over them. More local project inst
 
 * A **principle** defines the preferred design direction.
 * A **code smell** is not a prohibition, but requires stopping to re-evaluate the decision. Any deviation requires deliberate justification.
-* An **anti-pattern** should be avoided unless more specific project requirements explicitly justify the opposite.
+* An **antipattern** should be avoided unless more specific project requirements explicitly justify the opposite.
 * The phrase **"as a rule"** establishes a strong default that allows justified exceptions.
 * Explicit prohibitions and mandatory requirements must be understood literally.
 
