@@ -26,3 +26,4 @@ Do not load all documentation unnecessarily. Read only the documents relevant to
 
 * `Abstractions.md` — working with interfaces, abstractions, subtyping, and inheritance.
 * `EditingByAgents.md` — rules for editing agent documentation.
+* `Naming.md` — principles and rules for naming entities and their members.
