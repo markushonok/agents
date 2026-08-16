@@ -24,6 +24,11 @@ Do not turn code smells into unconditional restrictions.
 
 Do not load all documentation unnecessarily. Read only the documents relevant to the current task.
 
+Topic-specific documentation may have a companion `.cs` file with the same name containing canonical examples. When reading a topic-specific document, read its companion example file if one exists.
+
+Treat canonical examples as demonstrations of how the applicable principles compose in actual code and use them as a style reference when implementing similar code.
+
 * `Abstractions.md` — working with interfaces, abstractions, subtyping, and inheritance.
 * `EditingByAgents.md` — rules for editing agent documentation.
 * `Naming.md` — principles and rules for naming entities and their members.
+* `Implementations.md` — principles and rules for structuring implementations, decomposition, and implementation details.

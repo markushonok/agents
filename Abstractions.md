@@ -39,3 +39,15 @@ An implementation of Yegor Bugayenko's `Decorating envelope` pattern is an examp
 A class that is not intended to be inherited in the current design must have the `sealed` modifier. The modifier documents the adopted design decision and explicitly communicates the class is not designed to be used as a base class.
 
 If the need arises to derive from a sealed class, the class must be examined and, if necessary, adapted for use as a base class. Only after that should the `sealed` modifier be removed.
+
+# Replaceable Runtime Type Knowledge
+
+Behavior must be defined through declared abstractions rather than knowledge of concrete runtime types.
+
+Runtime type introspection and downcasting may be used as low-level implementation mechanisms or optimizations, but must remain replaceable without changing the conceptual design.
+
+Do not make an abstraction depend on discovering the concrete implementation of an object. A correct implementation through the declared contract must remain possible without runtime type checks or downcasts.
+
+Branching on concrete runtime types to determine behavior is a code smell and usually indicates that the required behavior is missing from the abstraction.
+
+An instance generic method whose type parameter is used to inspect, interpret, or cast an otherwise untyped value is a code smell. Signatures such as `Method<T>(object)` often indicate that static type information has been erased and is being reconstructed through runtime type knowledge.

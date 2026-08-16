@@ -3,3 +3,4 @@
 
 # JetBrains IDE workspace files
 .idea/
+*.DotSettings.user

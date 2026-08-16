@@ -1,0 +1,3 @@
+[submodule "Modules/Markushonok Code Style"]
+	path = Modules/Markushonok Code Style
+	url = https://github.com/markushonok/code-style.git
