@@ -16,11 +16,21 @@ Reuse is not required for decomposition. Extracting a method is valuable even wh
 
 Do not extract methods merely to satisfy structural limits. Every extracted method must represent a meaningful abstraction and have a name that communicates its semantics.
 
+Do not use method decomposition to keep an independently nameable concept inside an unrelated type.
+
 # Exception Decomposition
 
 When exception construction introduces implementation details that distract from the surrounding flow, extract it into a semantically named factory property or method.
 
 Keep concise, self-explanatory exception construction inline when extraction would provide no additional semantic or abstraction value.
+
+# Type Decomposition
+
+A cohesive group of implementation details that represents an independently nameable entity, value, state, or role remaining embedded in another type is a code smell.
+
+Reuse is not required. Extraction is valuable when it makes an implicit concept explicit through composition.
+
+Do not extract members merely to reduce the size of an implementation. The extracted type must represent a meaningful concept of its own.
 
 # Transparent Composition
 
