@@ -26,11 +26,14 @@ Keep concise, self-explanatory exception construction inline when extraction wou
 
 # Type Decomposition
 
-A cohesive group of implementation details that represents an independently nameable entity, value, state, or role remaining embedded in another type is a code smell.
+Decompose implementations into cohesive, independently nameable concepts.
 
-Reuse is not required. Extraction is valuable when it makes an implicit concept explicit through composition.
+An implementation exceeding approximately one hundred non-empty lines is a code smell and requires re-evaluating its decomposition.
 
-Do not extract members merely to reduce the size of an implementation. The extracted type must represent a meaningful concept of its own.
+Reuse is not required. Do not keep an independently meaningful concept embedded in another type merely because it has one consumer.
+
+Do not decompose merely to reduce size. Stop when further decomposition would split one cohesive concept into its individual operations or implementation details.
+
 
 # Transparent Composition
 
