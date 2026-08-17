@@ -32,3 +32,4 @@ Treat canonical examples as demonstrations of how the applicable principles comp
 * `EditingByAgents.md` — rules for editing agent documentation.
 * `Naming.md` — principles and rules for naming entities and their members.
 * `Implementations.md` — principles and rules for structuring implementations, decomposition, and implementation details.
+* `Ordering.md` — principles and rules for member ordering, implementation reading flow, and semantic locality.
