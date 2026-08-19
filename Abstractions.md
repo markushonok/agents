@@ -1,36 +1,36 @@
 # Single Interface Principle
 
-A concrete implementation, as a rule, must implement one primary conceptual interface. If a type directly implements several related interfaces, this usually means that a unifying interface is missing that represents a cohesive entity and is a subtype of those narrower interfaces.
+Design a concrete implementation around one primary conceptual interface.
 
-For example, if an entity is both `IReadable` and `IWritable`, it is preferable to define `IFile: IReadable, IWritable`, and the concrete type must be a subtype of `IFile`.
+Directly implementing several related conceptual interfaces is a **moderate smell** and usually indicates that a unifying interface is missing which represents the cohesive entity and is a subtype of those narrower interfaces.
+
+For example, if an entity is both `IReadable` and `IWritable`, prefer defining `IFile: IReadable, IWritable` and making the concrete type a subtype of `IFile`.
 
 Additional technical and orthogonal interfaces, such as `IEquatable<T>`, do not violate this principle.
 
 # Public Members Implement Interfaces
 
-Public instance members of a concrete implementation, as a rule, must implement an interface contract.
+Expose the public instance behavior of a concrete implementation through its interface contract.
 
-If an instance member is part of the public behavior of an entity, it must be declared in the corresponding interface rather than exist only on the concrete type.
+A public instance member that represents behavior of the entity but exists only on the concrete implementation is a **moderate smell**.
 
-Static members are not subject to this rule.
+Static members are not subject to this guidance.
 
-Public instance members specific to a concrete implementation are allowed if they conceptually remain implementation details but are safe enough to expose publicly. Such an exception must not expand the abstract contract of the entity and requires deliberate justification. A safe method overload is an example of an exception.
+Public instance members specific to a concrete implementation are allowed when they conceptually remain implementation details but are safe enough to expose publicly. Such an exception must not expand the abstract contract of the entity. A safe method overload is an example.
 
 # Small Interface Principle
 
-Interfaces must be small and represent the minimal cohesive contract of an entity.
+An interface whose effective contract contains more than four members is a **light smell**. Members inherited through its conceptual supertypes are included in the count.
 
-An interface whose effective contract contains more than four members is a code smell. Members of all interfaces it is a subtype of are included in the count as well.
-
-Exceeding this threshold requires re-evaluating the interface's responsibility and the possibility of decomposing it.
+The threshold is a reason to inspect the interface's responsibility and cohesion. Size alone does not justify decomposition.
 
 # Inheritance from Classes
 
-Inheritance from classes, including the use of abstract classes, is a code smell.
+Inheritance from classes, including the use of abstract classes, is a **strong smell**.
 
 Unlike interface subtyping, class inheritance is restricted to a single base class. A class can have only one direct base class. Choosing a base class occupies that single position in the class hierarchy and thereby limits further composition through class inheritance.
 
-A base class also creates coupling to the class type construct: a contract expressed through class inheritance requires its implementations to be classes and therefore excludes a possible struct implementation. An interface imposes no such restriction and leaves the choice of implementation type open. An interface does not impose such a restriction and leaves the choice of implementation construct open.
+A base class also creates coupling to the class type construct: a contract expressed through class inheritance requires its implementations to be classes and therefore excludes a possible struct implementation. An interface imposes no such restriction and leaves the choice of implementation type open.
 
 An implementation of Yegor Bugayenko's `Decorating envelope` pattern is an example of an exception.
 
@@ -48,6 +48,6 @@ Runtime type introspection and downcasting may be used as low-level implementati
 
 Do not make an abstraction depend on discovering the concrete implementation of an object. A correct implementation through the declared contract must remain possible without runtime type checks or downcasts.
 
-Branching on concrete runtime types to determine behavior is a code smell and usually indicates that the required behavior is missing from the abstraction.
+Branching on concrete runtime types to determine behavior is a **strong smell** and usually indicates that the required behavior is missing from the abstraction.
 
-An instance generic method whose type parameter is used to inspect, interpret, or cast an otherwise untyped value is a code smell. Signatures such as `Method<T>(object)` often indicate that static type information has been erased and is being reconstructed through runtime type knowledge.
+An instance generic method whose type parameter is used to inspect, interpret, or cast an otherwise untyped value is a **moderate smell**.

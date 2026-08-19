@@ -1,16 +1,16 @@
 # Small Methods
 
-Methods must be small in both length and structural depth.
+Prefer methods that keep one behavior understandable without excessive structural depth or incidental detail.
 
-A method whose body contains more than ten non-empty lines, excluding lines containing only braces, is a code smell.
+A method whose body contains more than ten non-empty lines, excluding lines containing only braces, is a **light smell**. Length alone does not justify decomposition.
 
-A control-flow nesting depth greater than two levels is a code smell. Prefer a shallow method whose behavior is expressed as a sequence of operations.
+A control-flow nesting depth greater than two levels is a **moderate smell**. Prefer a shallow method whose behavior is expressed as a sequence of meaningful operations.
 
-When a method becomes too long or deeply nested, apply the decomposition principles rather than compressing the implementation or combining multiple operations into individual lines.
+When complexity makes a method difficult to understand, apply the decomposition guidance rather than compressing the implementation or combining multiple operations into individual lines.
 
 # Method Decomposition
 
-Decompose complex behavior into small, semantically named methods representing meaningful values or operations.
+Decompose complex behavior into semantically meaningful values and operations when doing so exposes the structure of the behavior.
 
 Reuse is not required for decomposition. Extracting a method is valuable even when it has only one call site if the extracted method gives a meaningful name to a part of the implementation or isolates a distinct operation.
 
@@ -26,13 +26,17 @@ Keep concise, self-explanatory exception construction inline when extraction wou
 
 # Type Decomposition
 
-Decompose implementations into cohesive, independently nameable concepts.
-
-An implementation exceeding approximately one hundred non-empty lines is a code smell and requires re-evaluating its decomposition.
+Keep behavior together while it belongs to one cohesive concept. Introduce another type when part of an implementation represents an independently meaningful concept with its own role in the design or composition.
 
 Reuse is not required. Do not keep an independently meaningful concept embedded in another type merely because it has one consumer.
 
-Do not decompose merely to reduce size. Stop when further decomposition would split one cohesive concept into its individual operations or implementation details.
+An implementation exceeding approximately one hundred non-empty lines is a **light smell**. Size is a reason to inspect its cohesion, not a reason to decompose it.
+
+A type extracted primarily to contain one operation or implementation fragment of another cohesive concept is a **moderate smell** when it has no clear independent conceptual role.
+
+Splitting one cohesive implementation into separate types primarily to reduce its size or satisfy structural thresholds is a **strong smell**.
+
+Stop decomposing when further extraction would turn operations or implementation details of one concept into artificial standalone concepts.
 
 # Transparent Composition
 
@@ -40,9 +44,9 @@ The dependencies and mutable state of an object must remain explicit and control
 
 ## Injectable State
 
-Types, as a rule, must be immutable. Mutability is a separate responsibility and belongs to types specifically designed to represent mutable state, such as `IRef<T>`, collections, and similar abstractions.
+Design ordinary types as immutable. Treat mutability as a separate responsibility represented by types specifically designed to own mutable state, such as `IRef<T>`, collections, and similar abstractions.
 
-An ordinary type must not own mutable state directly. Mutable state on which its behavior depends must be supplied as a dependency, allowing the creator to own, share, and control that state independently of the object that uses it.
+An ordinary type must not own mutable state directly. Mutable state on which its behavior depends must be supplied as a dependency, allowing the creator to own, share, and control that state independently.
 
 ## Transparent Construction
 

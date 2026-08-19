@@ -12,13 +12,14 @@ Project-specific instructions take precedence over them. More local project inst
 
 # Interpretation of Rules
 
-* A **principle** defines the preferred design direction.
-* A **code smell** is not a prohibition, but requires stopping to re-evaluate the decision. Any deviation requires deliberate justification.
-* An **antipattern** should be avoided unless more specific project requirements explicitly justify the opposite.
-* The phrase **"as a rule"** establishes a strong default that allows justified exceptions.
+* A **principle** defines a fundamental preferred design direction.
+* A **good practice** describes a preferred practical way to design or implement something.
+* A **light smell** is a weak negative signal. By itself, it normally does not justify changing the design.
+* A **moderate smell** is a meaningful negative signal that warrants deliberate re-evaluation of the decision.
+* A **strong smell** is strong evidence of a poor design decision and should normally be avoided unless the specific context provides sufficient justification.
 * Explicit prohibitions and mandatory requirements must be understood literally.
 
-Do not turn code smells into unconditional restrictions.
+Smells are diagnostic guidance. Do not construct a design by mechanically eliminating smells or satisfying structural thresholds.
 
 # Navigation
 

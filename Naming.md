@@ -2,7 +2,7 @@
 
 Name entities after what they **are**, not what they **do**.
 
-Names such as `Handler`, `Processor`, `Validator`, `Sorter`, and `Builder` are code smells when they merely describe performers of actions. Prefer names describing an entity, state, role, or result.
+Names such as `Handler`, `Processor`, `Validator`, `Sorter`, and `Builder` are **moderate smells** when they merely describe performers of actions.
 
 The `-er` suffix is fine when the word denotes an entity in its own right, such as `Computer`, `User`, `Player`, `Server`, or `Manager` as a job title.
 
