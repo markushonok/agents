@@ -34,7 +34,6 @@ Reuse is not required. Do not keep an independently meaningful concept embedded 
 
 Do not decompose merely to reduce size. Stop when further decomposition would split one cohesive concept into its individual operations or implementation details.
 
-
 # Transparent Composition
 
 The dependencies and mutable state of an object must remain explicit and controllable through composition. Construction must not hide state ownership, dependency observation, or derived values from the creator.

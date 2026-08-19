@@ -8,12 +8,12 @@ The `-er` suffix is fine when the word denotes an entity in its own right, such 
 
 # Naming Members
 
-Name members after the value they represent, regardless of member kind or implementation.
+Name members after what they semantically represent, not after how they are implemented or what type they return.
 
-Values may represent entities, states, results, or actions. Name entities and results descriptively, and actions with verbs. An action is itself a value, so a property may also be named `Call`, `Save`, or `Close`.
+Members may represent entities, states, results, or actions. Name non-action values descriptively and actions with verbs.
 
-If a member semantically represents a value, name that value even when getting it requires heavy computation, I/O, or other effects. Use a verb only when the represented value is itself an action, regardless of whether obtaining that action is pure or impure.
+An action may itself be represented as a value, so member kind does not determine its naming. An action is named with a verb whether it is represented as a value or performed by evaluating the member.
 
-Follow ordinary language: “I used my phone to contact my current manager,” not “I used my GetPhone to contact my GetCurrentManager.”
+If a member represents a non-action value, name that value even when obtaining it requires heavy computation, I/O, mutation, or other effects. Retrieval and implementation mechanics do not determine the name.
 
-Base names on semantics, not on retrieval, computation, or implementation mechanics.
+Prepositions may express the semantic relationship represented by a member. Prefer ordinary-language forms such as From, To, At, Of, With, Between, or By when they describe how the represented value relates to its arguments or context.
