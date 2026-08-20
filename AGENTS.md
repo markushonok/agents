@@ -31,6 +31,7 @@ Treat canonical examples as demonstrations of how the applicable principles comp
 
 * `Abstractions.md` — working with interfaces, abstractions, subtyping, and inheritance.
 * `EditingByAgents.md` — rules for editing agent documentation.
+* `Formatting.md` — source layout, line width, and structural formatting.
 * `Naming.md` — principles and rules for naming entities and their members.
 * `Implementations.md` — principles and rules for structuring implementations, decomposition, and implementation details.
 * `Ordering.md` — principles and rules for member ordering, implementation reading flow, and semantic locality.
