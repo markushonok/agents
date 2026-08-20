@@ -18,7 +18,14 @@ Prefer behavior that forms part of the meaningful contract over incidental imple
 
 Unit, component, integration, and similar categories are descriptive. Do not change the behavioral boundary merely to fit a category.
 
-Organize test files around cohesive areas of behavior rather than production files, types, interfaces, or members.
+Organize test files and classes around cohesive areas of behavior rather than
+production files, types, interfaces, or members.
+
+A test class may exercise several production types, and one production type
+may be specified across several test classes.
+
+Behavioral areas may specialize or cross-cut broader areas when that gives
+their propositions a clearer context.
 
 # Test Representation
 
@@ -26,12 +33,18 @@ Use xUnit as the test framework.
 
 Define tests as static methods in static classes.
 
-Name each test after the behavioral proposition it establishes. Use a concise declarative name such as:
+Name each test class after the behavioral context shared by its tests.
 
-* `AddedAccountExists`
-* `RemovedAccountCannotAuthenticate`
-* `AwaitingDoesNotMatch`
-* `OperationRunsOnce`
+Name each test after the behavioral proposition it establishes within that
+context. Prefer the shortest declarative name that remains clear without
+repeating context already established by the test class.
+
+For example:
+
+* `AccountLifecycleTest.AddedAccountExists`
+* `AccountAuthenticationTest.RemovedAccountCannotAuthenticate`
+* `TaskAwaitingTest.DoesNotMatch`
+* `TaskOperationTest.RunsOnce`
 
 Do not encode setup, execution steps, implementation paths, or assertions into names through mechanical `Method_Scenario_Result`, `Given_When_Then`, or similar structures.
 
