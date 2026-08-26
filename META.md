@@ -1,4 +1,4 @@
-# Editing Agent Documentation
+# Meta-documentation
 
 Agent documentation teaches an agent how engineering decisions are made in the repository. When changing it, preserve clarity, consistency, and enough context to recognize when and how the guidance applies.
 
@@ -18,7 +18,8 @@ Add rationale, boundaries, trade-offs, and canonical examples when they help dis
 
 Place guidance in the narrowest document to which it applies.
 
-Maintain navigation in `AGENTS.MD`: each topical document must be listed with a brief description of its area of application.
+Maintain navigation in `AGENTS.md`: each topic must be listed with a brief
+description of its scope.
 
 Do not duplicate guidance in multiple documents. If a rule depends on another document, add a brief reference or explicitly state its scope.
 

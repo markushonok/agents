@@ -25,15 +25,27 @@ Smells are diagnostic guidance. Do not construct a design by mechanically elimin
 
 Do not load all documentation unnecessarily. Read only the documents relevant to the current task.
 
-Topic-specific documentation may have a companion `.cs` file with the same name containing canonical examples. When reading a topic-specific document, read its companion example file if one exists.
+Navigation entries use `<Topic>.*` to refer to the files associated with a
+topic.
+
+The `<Topic>.md` file is the primary normative source.
+
+Other files with the same stem may provide supporting material relevant to the
+topic.
 
 Treat canonical examples as demonstrations of how the applicable principles compose in actual code and use them as a style reference when implementing similar code.
 
-* `Abstractions.md` — working with interfaces, abstractions, subtyping, and inheritance.
-* `Concurrency.md` — principles for thread safety, synchronization, atomicity, and concurrent composition.
-* `EditingByAgents.md` — rules for editing agent documentation.
-* `Formatting.md` — source layout, line width, and structural formatting.
-* `Naming.md` — principles and rules for naming entities and their members.
-* `Implementations.md` — principles and rules for structuring implementations, decomposition, and implementation details.
-* `Ordering.md` — principles and rules for member ordering, implementation reading flow, and semantic locality.
-* `Testing.md` — principles and rules for behavioral specification, test organization, assertions, and development verification.
+* `Abstraction.*` — interface and inheritance design.
+* `Composition.*` — decomposition, state ownership, construction, and
+  composition of implementations.
+* `Concurrency.*` — thread safety, synchronization, atomicity, and concurrent
+  composition.
+* `Formatting.*` — source layout, line width, and structural formatting.
+* `Naming.*` — naming entities and their members.
+* `Ordering.*` — member ordering, implementation reading flow, and semantic
+  locality.
+* `Reflection.*` — runtime introspection, type knowledge, and reflection.
+* `Testing.*` — behavioral specification, test organization, assertions, and
+  development verification.
+* `META.*` — structuring, editing, and maintaining this engineering
+  specification.

@@ -1,4 +1,6 @@
-# Small Methods
+# Decomposition
+
+## Small Methods
 
 Prefer methods that keep one behavior understandable without excessive structural depth or incidental detail.
 
@@ -8,7 +10,7 @@ A control-flow nesting depth greater than two levels is a **moderate smell**. Pr
 
 When complexity makes a method difficult to understand, apply the decomposition guidance rather than compressing the implementation or combining multiple operations into individual lines.
 
-# Method Decomposition
+## Method Decomposition
 
 Decompose complex behavior into semantically meaningful values and operations when doing so exposes the structure of the behavior.
 
@@ -18,13 +20,13 @@ Do not extract methods merely to satisfy structural limits. Every extracted meth
 
 Do not use method decomposition to keep an independently nameable concept inside an unrelated type.
 
-# Exception Decomposition
+## Exception Decomposition
 
 When exception construction introduces implementation details that distract from the surrounding flow, extract it into a semantically named factory property or method.
 
 Keep concise, self-explanatory exception construction inline when extraction would provide no additional semantic or abstraction value.
 
-# Type Decomposition
+## Type Decomposition
 
 Keep behavior together while it belongs to one cohesive concept. Introduce another type when part of an implementation represents an independently meaningful concept with its own role in the design or composition.
 
@@ -63,13 +65,3 @@ Define the most general implementation first, with its dependencies exposed thro
 More specific forms may then be composed by partially or fully supplying those dependencies through static factory properties or methods.
 
 Composition must preserve the general injectable form. Callers must remain able to construct the object with explicitly supplied dependencies through its primary constructor.
-
-# Replaceable Reflection
-
-Reflection may be used as an implementation mechanism, but must not be an irreplaceable foundation of the design.
-
-Anything implemented through reflection must remain expressible through ordinary code and declared abstractions without changing the conceptual design.
-
-Reflection may automate repetitive implementation or composition work, such as discovering implementations, generating implementations of declared interfaces, or wiring dependencies through an IoC.
-
-Do not use reflection to compensate for a missing abstraction or to make behavior depend on structural information that is available only through runtime type inspection.
