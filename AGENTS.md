@@ -40,6 +40,8 @@ Treat canonical examples as demonstrations of how the applicable principles comp
   composition of implementations.
 * `Concurrency.*` — thread safety, synchronization, atomicity, and concurrent
   composition.
+* `Declaration.*` — declaration scope, accessibility, and source-file
+  placement.
 * `Formatting.*` — source layout, line width, and structural formatting.
 * `Naming.*` — naming entities and their members.
 * `Ordering.*` — member ordering, implementation reading flow, and semantic
