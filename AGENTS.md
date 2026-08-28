@@ -21,6 +21,11 @@ Project-specific instructions take precedence over them. More local project inst
 
 Smells are diagnostic guidance. Do not construct a design by mechanically eliminating smells or satisfying structural thresholds.
 
+# Change Completion
+
+After the last file edit, run `./TrimEof.sh` before reporting the task as
+complete.
+
 # Navigation
 
 Do not load all documentation unnecessarily. Read only the documents relevant to the current task.
