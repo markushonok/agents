@@ -51,7 +51,7 @@ Treat canonical examples as demonstrations of how the applicable principles comp
 * `Naming.*` — naming entities and their members.
 * `Ordering.*` — member ordering, implementation reading flow, and semantic
   locality.
-* `Reflection.*` — runtime introspection, type knowledge, and reflection.
+* `Reflection.*` — runtime introspection, type knowledge, downcasting, and reflection.
 * `Testing.*` — behavioral specification, test organization, assertions, and
   development verification.
 * `META.*` — structuring, editing, and maintaining this engineering
