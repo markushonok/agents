@@ -1,8 +1,11 @@
 # Overview
 
-Shared engineering specification for coding agents used across multiple software projects.
+Shared C# and .NET engineering specification for coding agents used across
+multiple software projects.
 
-The repository provides a single source of project-independent engineering instructions that can be referenced without duplicating them across individual repositories.
+The specification is independent of any particular project while remaining
+specific to C# and .NET engineering. It can be referenced without duplicating
+its instructions across individual repositories.
 
 [`AGENTS.md`](./AGENTS.md) is the entry point to the specification.
 
