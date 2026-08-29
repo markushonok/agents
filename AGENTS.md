@@ -10,6 +10,13 @@ The rules of this repository are general defaults.
 
 Project-specific instructions take precedence over them. More local project instructions may further specialize rules for individual subsystems.
 
+# Paths
+
+Documentation uses the following abstract paths:
+
+* `<project>` — the root directory of the project being worked on.
+* `<programming>` — the directory containing this specification's `AGENTS.md`.
+
 # Interpretation of Rules
 
 * A **principle** defines a fundamental preferred design direction.
@@ -23,8 +30,8 @@ Smells are diagnostic guidance. Do not construct a design by mechanically elimin
 
 # Change Completion
 
-After the last file edit, run `./TrimEof.sh` before reporting the task as
-complete.
+After the last file edit, run `<programming>/TrimEof.sh` from `<project>`
+before reporting the task as complete.
 
 # Navigation
 
