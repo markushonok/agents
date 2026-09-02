@@ -1,4 +1,8 @@
-# Structural Layout
+# Formatting
+
+These formatting rules apply to program source code only. They do not apply to Markdown or other prose documentation.
+
+## Structural Layout
 
 Prefer narrow layouts that make code structure apparent without breaking
 cohesive expressions unnecessarily.
@@ -10,7 +14,7 @@ they expose meaningful hierarchy or prevent horizontal complexity.
 Do not expand code vertically merely because it can be decomposed
 syntactically.
 
-# Line Width
+## Line Width
 
 Keep source lines within 80 columns, with tabs counting as two columns.
 
