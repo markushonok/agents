@@ -28,38 +28,37 @@ Documentation uses the following abstract paths:
 
 Smells are diagnostic guidance. Do not construct a design by mechanically eliminating smells or satisfying structural thresholds.
 
-# Change Completion
+# Selecting Applicable Topics
 
-After the last file edit, run `<programming>/TrimEof.sh` from `<project>`
-before reporting the task as complete.
+Before editing code, identify the kinds of changes the task may require and read every topic whose `Read when` condition matches.
 
-# Navigation
+Re-evaluate the applicable topics whenever the implementation introduces a kind of change that was not expected during preparation. Read any newly applicable topic before continuing.
 
-Do not load all documentation unnecessarily. Read only the documents relevant to the current task.
-
-Navigation entries use `<Topic>.*` to refer to the files associated with a
-topic.
-
-The `<Topic>.md` file is the primary normative source.
-
-Other files with the same stem may provide supporting material relevant to the
-topic.
+For an applicable topic, read its `<Topic>.md` as the primary normative source. Other files with the same stem may provide supporting material relevant to the topic.
 
 Treat canonical examples as demonstrations of how the applicable principles compose in actual code and use them as a style reference when implementing similar code.
 
-* `Abstraction.*` — interface and inheritance design.
-* `Composition.*` — decomposition, state ownership, construction, and
-  composition of implementations.
-* `Concurrency.*` — thread safety, synchronization, atomicity, and concurrent
-  composition.
-* `Declaration.*` — declaration scope, accessibility, and source-file
-  placement.
-* `Formatting.*` — source layout, line width, and structural formatting.
-* `Naming.*` — naming entities and their members.
-* `Ordering.*` — member ordering, implementation reading flow, and semantic
-  locality.
-* `Reflection.*` — runtime introspection, type knowledge, downcasting, and reflection.
-* `Testing.*` — behavioral specification, test organization, assertions, and
-  development verification.
-* `META.*` — structuring, editing, and maintaining this engineering
-  specification.
+| Topic | Read when |
+| --- | --- |
+| `Abstraction.*` | Adding or changing an interface or inheritance relationship |
+| `Composition.*` | Changing object construction, state ownership, or decomposition |
+| `Concurrency.*` | Adding or changing synchronization, atomicity, or thread-safety guarantees |
+| `Declaration.*` | Changing declaration scope, accessibility, nesting, or source-file placement |
+| `Formatting.*` | Changing source layout, line wrapping, or structural formatting |
+| `Naming.*` | Introducing or renaming a symbol |
+| `Ordering.*` | Adding, removing, or reordering declarations within a type or top-level type declarations within a source file, or introducing or changing a dependency between such declarations |
+| `Reflection.*` | Adding runtime type inspection, downcasting, or reflection |
+| `Testing.*` | Changing observable behavior or fixing a defect |
+| `META.*` | Changing this engineering specification |
+
+A topic becomes applicable because of the implementation being performed, not only because of the wording of the original task.
+
+# Change Completion
+
+Before reporting the task as complete:
+
+1. Inspect the complete diff.
+2. Identify the topics applicable to the final diff.
+3. Verify the diff against every applicable topic.
+4. Resolve every violation or report it explicitly.
+5. Run `<programming>/TrimEof.sh` from `<project>`.
